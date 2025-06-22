@@ -22,7 +22,7 @@ public class DriverFactory {
         }
         assert webDriver != null;
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.getInteger(ConfigReader.getPropKey("implicitWait"))));
+        //webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.getInteger(ConfigReader.getPropKey("implicitWait"))));
         driver.set(webDriver);
     }
     public static synchronized WebDriver getDriver(){

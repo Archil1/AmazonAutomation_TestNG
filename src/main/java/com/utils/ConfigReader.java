@@ -6,19 +6,17 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-    
-    static Properties prop=new Properties();
-    
-    public void loadProperty(){
 
-        try {
-            FileInputStream file=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\config\\config.properties");
-            prop.load(file);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    private static Properties prop;
+
+    public static Properties loadProperties() throws IOException {
+        prop = new Properties();
+        FileInputStream file = new FileInputStream("src/main/resources/config/config.properties");
+        prop.load(file);
+        return prop;
     }
-    public static String getPropKey(String key){
-        return prop.getProperty(key);
+
+    public static String getPropKey(String key) throws IOException {
+        return loadProperties().getProperty(key);
     }
 }
