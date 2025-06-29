@@ -1,5 +1,7 @@
 package com.tests;
 
+
+
 import com.core.DriverFactory;
 import com.core.WebDriverManager;
 import com.utils.ConfigReader;
@@ -15,9 +17,11 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class BaseTest {
     static WebDriver driver;
+    
+    
     @Parameters("browser")
-    @BeforeTest
-    public void launchURL(String browser) throws IOException {
+    @BeforeMethod
+    public void launchURL(@Optional("chrome") String browser) throws IOException {
         if(browser==null || browser.isEmpty()){
             browser= ConfigReader.getPropKey("defaultBrowser");
         }
@@ -28,12 +32,13 @@ public class BaseTest {
         DriverFactory.getDriver().get(url);
     }
     
-    @AfterTest
+    @AfterMethod
     public void teardown(){
         WebDriverManager.quit();
     }
     
-        public static void takeScreenshot() {
+    
+    public static void takeScreenshot() {
             driver=DriverFactory.getDriver();
             // Define target directory
             String screenshotDir = System.getProperty("user.dir") + "/target/screenshots/";
