@@ -7,15 +7,15 @@
         <listener class-name="com.Listeners.TestListeners"/>
     </listeners>
     <test name="ChromeTests">
-        <parameter name="browser" value="${browser}" />
+        <parameter name="browser" value="chrome" />
         <classes>
             <class name="com.tests.LoginTest" />
         </classes>
     </test>
-<!--    <test name="FirefoxTests">-->
-<!--        <parameter name="browser" value="edge" />-->
-<!--        <classes>-->
-<!--            <class name="com.tests.LoginTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="FirefoxTests">
+        <parameter name="browser" value="edge" />
+        <classes>
+            <class name="com.tests.LoginTest" />
+        </classes>
+    </test>
 </suite>
