@@ -7,7 +7,7 @@
         <listener class-name="com.Listeners.TestListeners"/>
     </listeners>
     <test name="ChromeTests">
-        <parameter name="browser" value="chrome" />
+        <parameter name="browser" value="${browser}" />
         <classes>
             <class name="com.tests.LoginTest" />
         </classes>
