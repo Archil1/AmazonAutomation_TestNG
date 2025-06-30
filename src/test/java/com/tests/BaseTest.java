@@ -22,7 +22,6 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void launchURL(@Optional("chrome") String browser) throws IOException {
-        
         if(browser==null || browser.isEmpty()){
             browser= ConfigReader.getPropKey("defaultBrowser");
         }
