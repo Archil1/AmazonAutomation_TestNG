@@ -84,13 +84,10 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
-                    <!-- run in-process so System.out goes straight to Jenkins -->
-                    <forkCount>0</forkCount>
-                    <!-- don’t buffer stdout to a file -->
+                    <redirectTestOutputToFile>false</redirectTestOutputToFile>
+                    <printSummary>true</printSummary>
                     <useFile>false</useFile>
-                   
-
+                    
                 </configuration>
             </plugin>
 
