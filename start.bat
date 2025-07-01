@@ -1,0 +1,3 @@
+@echo off
+echo Starting Docker Grid...
+docker-compose up 

@@ -13,9 +13,10 @@ public class LoginTest extends BaseTest{
   
     @Test
     public void loginTest() throws IOException, InterruptedException {
-        LoginPage loginPage=new LoginPage();
+        LoginPage loginPage=new LoginPage(); 
         String userName= ConfigReader.getPropKey("username1");
         String passWord=ConfigReader.getPropKey("password");
+        Thread.sleep(30000);
         DashBoard dashBoard=loginPage.loginAs(userName,passWord);
         Thread.sleep(5000);
         takeScreenshot();

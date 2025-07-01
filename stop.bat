@@ -1,0 +1,3 @@
+@echo off
+echo Stopping Docker Grid...
+docker-compose down

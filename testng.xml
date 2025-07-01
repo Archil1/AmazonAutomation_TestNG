@@ -6,6 +6,12 @@
         <listener class-name="com.Listeners.SuitListeners"/>
         <listener class-name="com.Listeners.TestListeners"/>
     </listeners>
+
+    <test name="SuitStart">
+       <classes>
+           <class name="com.docker.DockerSetup"/>
+       </classes>
+    </test>
     <test name="ChromeTests">
         <parameter name="browser" value="chrome" />
         <classes>
