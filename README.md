@@ -1,8 +1,7 @@
-# Project Title
+# TestNG Automation Framwork CI/CD Comptalible
 This is a demo automation framework built with TestNG for testing the SauceDemo web application.
 It covers multiple end-to-end test scenarios including login, product validation, cart operations, and checkout flows.
-The framework is integrated with Jenkins to enable Continuous Integration (CI), ensuring automated test execution on every code push and improving overall testing efficiency and reliability.
-
+The framework is integrated with Jenkins and Docker to enable robust Continuous Integration (CI). Jenkins automates test execution on every code push, while Docker ensures consistent, containerized environments for scalable and reliable test runs. This combination significantly improves testing efficiency, portability, and reliability across different environments.
 
 ## Prerequisites
 
@@ -12,22 +11,34 @@ The framework is integrated with Jenkins to enable Continuous Integration (CI), 
 
 ## Getting Started
 
-1. **Clone the repository:**
+## **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/your-repo.git
    cd your-repo
    ```
+⚙️ Configure Jenkins for Test Execution
+📌 Create a Jenkins Pipeline Job
+Open Jenkins and create a new Pipeline job.
 
-2. **Configure Jenkins:**
-   - Create a new Pipeline job in Jenkins.
-   - Point the pipeline to your repository (via GitHub integration or by specifying the repo URL).
-   - If using a `Jenkinsfile` in the repo, Jenkins will use it automatically.
+Connect it to your GitHub repository via GitHub integration or by directly specifying the repository URL.
 
-3. **Run the Pipeline:**
-   - Click **Build Now** in Jenkins to start the pipeline.
-   - Monitor the build progress through the Jenkins web UI.
+Ensure your repository contains a Jenkinsfile. Jenkins will automatically detect and use it to define the pipeline steps.
 
-## Jenkins Pipeline Example
+## 🐳 **Automatic Docker Management**
+
+The framework includes start.bat and stop.bat scripts that:
+Start required Docker containers (e.g., Selenium Grid).
+Stop and clean up the containers after test execution.
+These scripts are called within the Jenkins pipeline, so no manual Docker interaction is needed.
+
+## ▶️ **Trigger Build for Test Execution**
+Click Build Now in Jenkins to run the pipeline.
+The pipeline will perform the following automated steps:
+
+Start Docker containers via start.bat
+Execute TestNG test suite using mvn test
+Shut down Docker containers via stop.bat
+All activities are logged and visible through the Jenkins web UI for easy monitoring.
 
 
 ## Contributing
@@ -41,5 +52,3 @@ The framework is integrated with Jenkins to enable Continuous Integration (CI), 
 
 
 ---
-
-**Note:** Replace placeholder sections (like "Project Title", repo URLs, and pipeline steps) with specifics for your project.
