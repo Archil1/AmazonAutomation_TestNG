@@ -32,7 +32,7 @@ public class DockerSetupListener implements IExecutionListener {
         //bat file will popup S
         //ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start stop.bat");
         //bat file wont pop up
-        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start", "/B", "start.bat");
+        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "start", "/B", "stop.bat");
         builder.inheritIO(); // Optional: show output in console
         try {
             builder.start();
